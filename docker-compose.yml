@@ -1,0 +1,17 @@
+version: '3'
+services:
+  laraveltask:
+    container_name: laraveltask
+    image: pagevamp/nginx-php7-fpm:7.2
+    restart: always
+    environment:
+      - VIRTUAL_HOST=sbadmin.pv
+    volumes:
+      - ./:/var/www
+      - ./docker/sites/default.conf:/etc/nginx/sites-enabled/default
+    networks:
+      - pagevamp
+
+networks:
+  pagevamp:
+    external: true
