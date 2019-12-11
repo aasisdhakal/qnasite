@@ -1,11 +1,11 @@
 version: '3'
 services:
   laraveltask:
-    container_name: laraveltask
+    container_name: stackoverflow
     image: pagevamp/nginx-php7-fpm:7.2
     restart: always
     environment:
-      - VIRTUAL_HOST=sbadmin.pv
+      - VIRTUAL_HOST=stackoverflow.pv
     volumes:
       - ./:/var/www
       - ./docker/sites/default.conf:/etc/nginx/sites-enabled/default
